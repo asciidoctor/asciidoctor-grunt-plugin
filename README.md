@@ -1,6 +1,6 @@
 # grunt-asciidoctor
 
-> The best Grunt plugin ever.
+> A Grunt plugin that uses Asciidoctor via Asciidoctor.js to process AsciiDoc source files within the project.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -37,46 +37,80 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.cwd
 Type: `String`
-Default value: `',  '`
+Default value: `''`
 
-A string value that is used to do something with whatever.
+A string to define the current working directory, default is the grunt project directory
 
-#### options.punctuation
+#### options.showTitle
+Type: `Boolean`
+Default value: `true`
+
+A boolean value to show or hide the title in html result.
+
+#### options.showNumberedHeadings
+Type: `Boolean`
+Default value: `true`
+
+A boolean value to show or hide numbered headings
+
+#### options.showToc
+Type: `Boolean`
+Default value: `true`
+
+A boolean value to show or hide table of contents
+
+#### options.header_footer
+Type: `Boolean`
+Default value: `false`
+
+A boolean value to show or hide header and footer of the HTML document
+
+#### options.safeMode
 Type: `String`
-Default value: `'.'`
+Default value: `'secure'`
 
-A string value that is used to do something else with whatever else.
+A string value to define the security mode.
+
+#### options.doctype
+Type: `String`
+Default value: `'article'`
+
+A string value to define the doctype.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
   asciidoctor: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/asciidoc': ['adocument.adoc', 'adocs/**/*.adoc'],
     },
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+
 
 ```js
 grunt.initConfig({
   asciidoctor: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      cwd: 'test/fixtures/',
+      showTitle: false,
+      showNumberedHeadings: false,
+      showToc: false,
+      header_footer: true,
+      safeMode: 'secure',
+      doctype: 'article'
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/asciidoc': ['adocument.adoc', 'adocs/**/*.adoc'],
     },
   },
 });
