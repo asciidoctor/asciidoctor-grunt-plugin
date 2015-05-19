@@ -16,10 +16,10 @@ var path = require('path');
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
-  grunt.registerMultiTask('asciidoctor', 'The best Grunt plugin ever.', function() {
+  var description = 'A Grunt plugin that uses Asciidoctor via Asciidoctor.js' +
+                    ' to process AsciiDoc source files within the project.';
+  
+  grunt.registerMultiTask('asciidoctor', description, function() {
     var gruntBase = process.cwd();
 
     // Merge task-specific and/or target-specific options with these defaults.
