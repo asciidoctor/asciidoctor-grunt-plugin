@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     var attributes = [];
     attributes.push(options.showTitle ? 'showtitle' : 'showtitle!');
     attributes.push(options.showNumberedHeadings ? 'numbered' : 'numbered!');
-    attributes.push(options.showToc ? 'toc=preamble toc2!' : 'toc! toc2!');
+    attributes.push(options.showToc ? 'toc=preamble@' : 'toc!');
     attributes.push(options.doctype ? 'doctype='+options.doctype : 'article');
     attributes.push(options.backend ? 'backend='+options.backend : 'html5');
 
