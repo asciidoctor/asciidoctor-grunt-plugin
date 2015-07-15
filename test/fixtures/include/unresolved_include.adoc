@@ -1,0 +1,16 @@
+:toc: right
+:last-update-label!:
+
+# Documentation
+
+Here is some text.
+
+
+image::architecture.png[]
+
+include::architecture.adoc[leveloffset=+1]
+
+## Next header
+## Header
+## Header
+## Header

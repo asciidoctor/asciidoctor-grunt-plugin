@@ -63,6 +63,18 @@ module.exports = function(grunt) {
         files: {
           'tmp/': ['**/*.adoc', '!includes/**/*.adoc']
         }
+      },
+      include: {
+        options: {
+          cwd: 'test/fixtures/include',
+          doctype: 'article',
+          backend: 'html5',
+          showToc: true,
+          header_footer: true
+        },
+        files: {
+          'tmp/': ['**/*.adoc', '!includes/**/*.adoc']
+        }
       }
     },
 

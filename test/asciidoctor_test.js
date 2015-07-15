@@ -44,5 +44,11 @@ exports.asciidoctor = {
     var expected = grunt.file.read('test/expected/override_toc.html');
     test.equal(grunt.util.normalizelf(actual + '\n'), expected, 'should describe what the default behavior is.');
     test.done();
+  },
+  unresolved_include: function(test) {
+    var actual = grunt.file.read('tmp/unresolved_include.html');
+    var expected = grunt.file.read('test/expected/unresolved_include.html');
+    test.equal(grunt.util.normalizelf(actual + '\n'), expected, 'should describe what the default behavior is.');
+    test.done();
   }
 };
