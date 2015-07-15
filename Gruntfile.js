@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     asciidoctor: {
       default_options: {
         options: {
-          cwd: 'test/fixtures/',
+          cwd: 'test/fixtures/default_options',
           doctype: 'article',
           backend: 'html5'
         },
@@ -42,10 +42,22 @@ module.exports = function(grunt) {
       },
       docbook5: {
         options: {
-          cwd: 'test/fixtures/',
+          cwd: 'test/fixtures/default_options',
           doctype: 'book',
           backend: 'docbook5',
           safeMode: 'safe',
+          header_footer: true
+        },
+        files: {
+          'tmp/': ['**/*.adoc', '!includes/**/*.adoc']
+        }
+      },
+      toc: {
+        options: {
+          cwd: 'test/fixtures/toc',
+          doctype: 'article',
+          backend: 'html5',
+          showToc: true,
           header_footer: true
         },
         files: {

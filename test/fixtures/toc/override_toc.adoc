@@ -1,0 +1,10 @@
+:toc: right
+:last-update-label!:
+
+= Documentation
+
+Here is some text.
+
+== Chapter one
+
+== Chapter two
