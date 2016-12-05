@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
   var description = 'A Grunt plugin that uses Asciidoctor via Asciidoctor.js' +
                     ' to process AsciiDoc source files within the project.';
-  
+
   grunt.registerMultiTask('asciidoctor', description, function() {
     var gruntBase = process.cwd();
 
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
       }).map(function(filepath) {
         // Read file source.
         var fileContent = grunt.file.read(filepath);
-        var base_dir = path.resolve(path.dirname(f.src));
+        var base_dir = path.resolve(path.dirname(filepath));
         var opts = Opal.hash2(['base_dir', 'safe', 'doctype', 'header_footer', 'attributes'], {
             'base_dir': 'file://'.concat(base_dir),
             'safe': options.safeMode,
